@@ -69,7 +69,6 @@ kw('init', {"language_code":"uk","bot_id":"23","title":"Консультант S
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
-    <script type="application/javascript" src="notifications.js"></script>
     <script>
         // Utility methods
         function request(method, url, data, callback) {
@@ -120,14 +119,6 @@ kw('init', {"language_code":"uk","bot_id":"23","title":"Консультант S
                     locale: 'en',
                     html: template.html,
                     css: template.css,
-                    notifications: {
-                        info: notifications.info.bind(notifications),
-                        error: notifications.error.bind(notifications),
-                        warn: notifications.warn.bind(notifications),
-                        loader: notifications.loader.bind(notifications),
-                        hide: notifications.hide.bind(notifications),
-                        success: notifications.success.bind(notifications)
-                    },
                     apiRequestData: apiRequestData,
                     userFullName: 'Plugin Demo User',
                     versionHistory: {
