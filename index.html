@@ -61,10 +61,10 @@ kw('init', {"language_code":"uk","bot_id":"23","title":"Консультант S
         <span id="changeHistoryContainer" style="display: none;">Last change: <a id="changeHistoryLink"></a></span>
     </div>
     <div class="notification-zone"></div>
-    <div>
+    <div style="display: flex;">
         <!--Plugin containers -->
-        <div id="stripoSettingsContainer">Loading...</div>
-        <div id="stripoPreviewContainer"></div>
+        <div id="stripoSettingsContainer" style="flex: 1 1 50%;">Loading...</div>
+        <div id="stripoPreviewContainer" style="flex: 1 1 50%;"></div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -144,7 +144,8 @@ kw('init', {"language_code":"uk","bot_id":"23","title":"Консультант S
 
         loadDemoTemplate(initPlugin);
     </script>
-</body>
+
+    
 
 
 </body>
