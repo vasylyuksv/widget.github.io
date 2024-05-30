@@ -48,104 +48,25 @@ kw('init', {"language_code":"uk","bot_id":1,"params_from_site":{}})
 <div id="kwizbot_widget"></div>
 <script defer>
 
-(function (k, w, i, z, b, o, t) {k['KwizbotWidget'] = b; k[b] = k[b] || function () { w.head.insertAdjacentHTML('beforeend', '<style type="text/css">.showAfterCssLoaded{display: none} .sc-powered-by{display:none} @media screen and (min-width: 451px) {.sc-chat-window{max-height: 550px;}} #kwizbot_widget .sc-launcher{bottom:50px; right:unset; left:50px;} #kwizbot_widget .sc-chat-window--widget{right: unset; left: 25px;} @media (max-width: 450px){#kwizbot_widget .sc-chat-window--widget{left: 0;}}</style>'); (k[b].q = k[b].q || []).push(arguments) }, k[b].l = 1 * new Date(); o = w.createElement(i), t = w.getElementsByTagName(i)[0]; o.async = 1; o.src = z; t.parentNode.insertBefore(o, t) })(window, document, 'script', 'https://widget-samsung.kwizbot.io/kwjs.js', 'kw');
+(function (k, w, i, z, b, o, t) {k['KwizbotWidget'] = b; k[b] = k[b] || function () { w.head.insertAdjacentHTML('beforeend', '<style type="text/css">.showAfterCssLoaded{display: none} .sc-powered-by{display:none} @media screen and (min-width: 451px) {.sc-chat-window{max-height: 550px;}} #kwizbot_widget .sc-launcher{bottom:54px; right:50px;} @media screen and (max-width: 900px){#kwizbot_widget .sc-launcher{bottom:92px; right:13px;}}</style>'); (k[b].q = k[b].q || []).push(arguments) }, k[b].l = 1 * new Date(); o = w.createElement(i), t = w.getElementsByTagName(i)[0]; o.async = 1; o.src = z; t.parentNode.insertBefore(o, t) })(window, document, 'script', 'https://widget-sv.kwizbot.io/kwjs.js', 'kw');
 
-kw('init', {"language_code":"uk","bot_id":"23","title":"Консультант SAMSUNG","subtitle":"","params_from_site":{"url":window.location.href,"type":"tv-it"},"widgetButton":{"type":"button","position":{"y":"bottom","x":"right","offset":25}},"colors":{"device":{"bg":"#FCFCFC","dot":"#95CBFB","border":"#188BE4","container":"#FCFCFC"},"keyboardButton":{"border":"#00B3E3","bg":"#00B3E3","text":"#FFFFFF"},"header":{"bg":"#00B3E3","text":"#ffffff"},"poweredLink":{"color":"#188BE4"},"userInput":{"bg":"#eaeaea","border":"#75787B","text":"#565867"},"sentMessage":{"bg":"#00B3E3","text":"#ffffff"},"receivedMessage":{"bg":"#eaeaea","text":"#222222"},"inlineKeyboardButton":{"bg":"#00B3E3","text":"#00B3E3","bgc":"#ffffff"}},"displayMode":"widget","launcher":{"type":"icon","closeIcon":"close","openIcon":"chat_bubble"},"recognize_user_meta":"false","titleImageUrl":"https://storage.static.kwizbot.io/samsung.kwizbot.io/static/photo_2024-02-07_16-55-35.jpg","botAvatarImageUrl":"https://storage.static.kwizbot.io/samsung.kwizbot.io/static/photo_2024-02-07_16-55-35.jpg","open_on_msg":false,"btn_restart_enabled":false}) 
-</script>
 
-    <div id="externalSystemContainer">
-        <!--This is external system container where you can place plugin buttons -->
-        <button id="undoButton" class="control-button">Undo</button>
-        <button id="redoButton" class="control-button">Redo</button>
-        <button id="codeEditor" class="control-button">Code editor</button>
-        <span id="changeHistoryContainer" style="display: none;">Last change: <a id="changeHistoryLink"></a></span>
-    </div>
-    <div class="notification-zone"></div>
-    <div style="display: flex;">
-        <!--Plugin containers -->
-        <div id="stripoSettingsContainer" style="flex: 1 1 50%;">Loading...</div>
-        <div id="stripoPreviewContainer" style="flex: 1 1 50%;"></div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
-    <script>
-        // Utility methods
-        function request(method, url, data, callback) {
-            var req = new XMLHttpRequest();
-            req.onreadystatechange = function () {
-                if (req.readyState === 4 && req.status === 200) {
-                    callback(req.responseText);
-                } else if (req.readyState === 4 && req.status !== 200) {
-                    console.error('Can not complete request. Please check you entered a valid PLUGIN_ID and SECRET_KEY values');
-                }
-            };
-            req.open(method, url, true);
-            if (method !== 'GET') {
-                req.setRequestHeader('content-type', 'application/json');
-            }
-            req.send(data);
-        }
-
-        function loadDemoTemplate(callback) {
-            request('GET', 'https://raw.githubusercontent.com/ardas/stripo-plugin/master/Public-Templates/Basic-Templates/Trigger%20newsletter%20mockup/Trigger%20newsletter%20mockup.html', null, function(html) {
-                request('GET', 'https://raw.githubusercontent.com/ardas/stripo-plugin/master/Public-Templates/Basic-Templates/Trigger%20newsletter%20mockup/Trigger%20newsletter%20mockup.css', null, function(css) {
-                    callback({html: html, css: css});
-                });
-            });
-        }
-    </script>
-
-    <script>
-        // Call this function to start plugin.
-        // For security reasons it is STRONGLY recommended NOT to store your PLUGIN_ID and SECRET_KEY on client side.
-        // Please use backend middleware to authenticate plugin.
-        // See documentation: https://stripo.email/plugin-api/
-        function initPlugin(template) {
-            const apiRequestData = {
-                emailId: 123
-            };
-            const script = document.createElement('script');
-            script.id = 'stripoScript';
-            script.type = 'text/javascript';
-            script.src = 'https://plugins.stripo.email/static/latest/stripo.js';
-            script.onload = function () {
-                window.Stripo.init({
-                    settingsId: 'stripoSettingsContainer',
-                    previewId: 'stripoPreviewContainer',
-                    codeEditorButtonId: 'codeEditor',
-                    undoButtonId: 'undoButton',
-                    redoButtonId: 'redoButton',
-                    locale: 'en',
-                    html: template.html,
-                    css: template.css,
-                    apiRequestData: apiRequestData,
-                    userFullName: 'Plugin Demo User',
-                    versionHistory: {
-                        changeHistoryLinkId: 'changeHistoryLink',
-                        onInitialized: function(lastChangeIndoText) {
-                            $('#changeHistoryContainer').show();
-                        }
-                    },
-                    getAuthToken: function (callback) {
-                        request('POST', 'https://plugins.stripo.email/api/v1/auth',
-                            JSON.stringify({
-                                pluginId: 'de100fba94c34f038bf7ec5f86ee083a',
-                                secretKey: '48c46bf5265f40998a2148ec136b984d'
-                            }),
-                            function(data) {
-                                callback(JSON.parse(data).token);
-                            });
-                    }
-                });
-            };
-            document.body.appendChild(script);
-        }
-
-        loadDemoTemplate(initPlugin);
-    </script>
-
-    
+kw('init', {
+    "language_code":"uk","bot_id":"35",
+    "callout":{
+            type: 'text', // text|image
+            imgSrc: 'https://storage.static.kwizbot.io/samsung.kwizbot.io/static/photo_2024-02-07_16-55-35.jpg',
+            text: "<div>Чат SAMSUNG</div>Вітаємо! Потрібна допомога з продукцією Samsung? Ми тут, щоб допомогти",
+            show: true,
+            // showDelay: 1000,
+            minWidth: 300,
+            position: {
+                y: 'bottom', //only bottom
+                x: '', //only right
+            },
+        },
+    "title":"Консультант SAMSUNG","subtitle":"","params_from_site":{"url":window.location.href,"type":"mobile"},"widgetButton":{"type":"button","position":{"y":"bottom","x":"right","offset":25}},"colors":{"device":{"bg":"#FCFCFC","dot":"#95CBFB","border":"#188BE4","container":"#FCFCFC"},"keyboardButton":{"border":"#00B3E3","bg":"#00B3E3","text":"#FFFFFF"},"header":{"bg":"#00B3E3","text":"#ffffff"},"poweredLink":{"color":"#188BE4"},"userInput":{"bg":"#eaeaea","border":"#75787B","text":"#565867"},"sentMessage":{"bg":"#00B3E3","text":"#ffffff"},"receivedMessage":{"bg":"#eaeaea","text":"#222222"},"inlineKeyboardButton":{"bg":"#00B3E3","text":"#00B3E3","bgc":"#ffffff"}},"displayMode":"widget","launcher":{"type":"icon","closeIcon":"close","openIcon":"chat_bubble"},"recognize_user_meta":"false","titleImageUrl":"https://storage.static.kwizbot.io/samsung.kwizbot.io/static/photo_2024-02-07_16-55-35.jpg","botAvatarImageUrl":"https://storage.static.kwizbot.io/samsung.kwizbot.io/static/photo_2024-02-07_16-55-35.jpg","open_on_msg":false,"btn_restart_enabled":false}) 
+</script>    
 
 
 </body>
