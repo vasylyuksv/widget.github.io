@@ -75,13 +75,22 @@ kw('init', {
 
 
 
-    <script>
+    <script defer>
         //https://w3schools.com/tags/horse.mp3
-        const audioSound = new Audio('https://www.w3schools.com/tags/horse.mp3');
+        async function audotest() {
+            const audioSound = new Audio('https://www.w3schools.com/tags/horse.mp3');
           await audioSound.load()
           await audioSound.play()
             .then(() => console.log('Audio started playing successfully!'))
-            .catch(err => console.log({text:'Error playing audio:', data: err }));
+            .catch(err => console.log({text:'Error playing audio:', data: err }));    
+        }
+
+
+        setTimeout(function() {
+            audotest();    
+        }, 2000)
+        
+        
     </script>
 </body>
 </html>
