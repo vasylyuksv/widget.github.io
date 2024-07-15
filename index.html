@@ -78,11 +78,16 @@ kw('init', {
     <script defer>
         //https://w3schools.com/tags/horse.mp3
         async function audotest() {
-            const audioSound = new Audio('https://sv.kwizbot.io/sound_1.mp3');
-          await audioSound.load()
-          await audioSound.play()
-            .then(() => console.log('Audio started playing successfully!'))
-            .catch(err => console.log({text:'Error playing audio:', data: err }));    
+            try {
+                const audioSound = new Audio('https://sv.kwizbot.io/sound_1.mp3');
+            await audioSound.load()
+            await audioSound.play()
+                .then(() => console.log('Audio started playing successfully!'))
+                .catch(err => console.log({text:'Error playing audio:', data: err }));        
+            } catch(e) {
+                console.log(e, 111111)
+            }
+            
         }
 
 
