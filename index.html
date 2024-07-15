@@ -74,7 +74,7 @@ kw('init', {
 </script>    
 
 
-
+<audio id="myAudio" src="https://sv.kwizbot.io/sound_1.mp3" preload="auto"></audio>
     <script defer>
         //https://w3schools.com/tags/horse.mp3
 
@@ -96,8 +96,26 @@ kw('init', {
 
 
         setTimeout(function() {
-            audotest();    
+            // audotest();    
         }, 8000)
+
+        document.addEventListener('DOMContentLoaded', function() {
+          const audioElement = document.getElementById('myAudio');
+          
+          // Attempt to play audio immediately
+          audioElement.play().then(() => {
+            console.log('Audio is playing');
+          }).catch(error => {
+            console.log('Autoplay was prevented:', error);
+        
+            // Fallback: Attempt to play after a short delay
+            setTimeout(() => {
+              audioElement.play().catch(error => {
+                console.log('Autoplay still prevented:', error);
+              });
+            }, 1000);
+          });
+        });
         
         
     </script>
