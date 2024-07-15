@@ -77,6 +77,10 @@ kw('init', {
 
     <script defer>
         //https://w3schools.com/tags/horse.mp3
+
+        navigator.mediaDevices.getUserMedia({ audio: true })
+
+        
         async function audotest() {
             try {
                 const audioSound = new Audio('https://sv.kwizbot.io/sound_1.mp3');
