@@ -48,10 +48,11 @@ kw('init', {"language_code":"uk","bot_id":1,"params_from_site":{}})
 <div id="kwizbot_widget"></div>
 <script defer>
 
-(function (k, w, i, z, b, o, t) {k['KwizbotWidget'] = b; k[b] = k[b] || function () { w.head.insertAdjacentHTML('beforeend', '<style type="text/css">.showAfterCssLoaded{display: none} .sc-powered-by{display:none} @media screen and (min-width: 451px) {.sc-chat-window{max-height: 550px;}} #kwizbot_widget .sc-launcher{bottom:54px; right:50px;} @media screen and (max-width: 900px){#kwizbot_widget .sc-launcher{bottom:92px; right:13px;}}</style>'); (k[b].q = k[b].q || []).push(arguments) }, k[b].l = 1 * new Date(); o = w.createElement(i), t = w.getElementsByTagName(i)[0]; o.async = 1; o.src = z; t.parentNode.insertBefore(o, t) })(window, document, 'script', 'https://widget-sv.kwizbot.io/kwjs.js', 'kw');
+(function (k, w, i, z, b, o, t) {k['KwizbotWidget'] = b; k[b] = k[b] || function () { w.head.insertAdjacentHTML('beforeend', '<style type="text/css">.showAfterCssLoaded{display: none} .sc-powered-by{display:none} @media screen and (min-width: 451px) {.sc-chat-window{max-height: 550px;}} #kwizbot_widget .sc-launcher{bottom:54px; right:50px;} @media screen and (max-width: 900px){#kwizbot_widget .sc-launcher{bottom:92px; right:13px;}}</style>'); (k[b].q = k[b].q || []).push(arguments) }, k[b].l = 1 * new Date(); o = w.createElement(i), t = w.getElementsByTagName(i)[0]; o.async = 1; o.src = z; t.parentNode.insertBefore(o, t) })(window, document, 'script', 'https://widget.kwizbot.io/kwjs_v2.js', 'kw');
 
 
 kw('init', {
+    "v2_value":"sv",
     "language_code":"uk","bot_id":"8",
     "callout":{
             type: 'text', // text|image
@@ -73,51 +74,5 @@ kw('init', {
     "colors":{"device":{"bg":"#FCFCFC","dot":"#95CBFB","border":"#188BE4","container":"#FCFCFC"},"keyboardButton":{"border":"#00B3E3","bg":"#00B3E3","text":"#FFFFFF"},"header":{"bg":"#00B3E3","text":"#ffffff"},"poweredLink":{"color":"#188BE4"},"userInput":{"bg":"#eaeaea","border":"#75787B","text":"#565867"},"sentMessage":{"bg":"#00B3E3","text":"#ffffff"},"receivedMessage":{"bg":"#eaeaea","text":"#222222"},"inlineKeyboardButton":{"bg":"#00B3E3","text":"#00B3E3","bgc":"#ffffff"}},"displayMode":"widget","launcher":{"type":"icon","closeIcon":"close","openIcon":"chat_bubble"},"recognize_user_meta":"false","titleImageUrl":"https://storage.static.kwizbot.io/samsung.kwizbot.io/static/photo_2024-02-07_16-55-35.jpg","botAvatarImageUrl":"https://storage.static.kwizbot.io/samsung.kwizbot.io/static/photo_2024-02-07_16-55-35.jpg","open_on_msg":false,"btn_restart_enabled":false}) 
 </script>    
 
-
-<audio id="myAudio" src="https://sv.kwizbot.io/sound_1.mp3" preload="auto"></audio>
-    <script defer>
-        //https://w3schools.com/tags/horse.mp3
-
-        navigator.mediaDevices.getUserMedia({ audio: true })
-
-        
-        async function audotest() {
-            try {
-                const audioSound = new Audio('https://sv.kwizbot.io/sound_1.mp3');
-            await audioSound.load()
-            await audioSound.play()
-                .then(() => console.log('Audio started playing successfully!'))
-                .catch(err => console.log({text:'Error playing audio:', data: err }));        
-            } catch(e) {
-                console.log(e, 111111)
-            }
-            
-        }
-
-
-        setTimeout(function() {
-            // audotest();    
-        }, 8000)
-
-        document.addEventListener('DOMContentLoaded', function() {
-          const audioElement = document.getElementById('myAudio');
-          
-          // Attempt to play audio immediately
-          audioElement.play().then(() => {
-            console.log('Audio is playing');
-          }).catch(error => {
-            console.log('Autoplay was prevented:', error);
-        
-            // Fallback: Attempt to play after a short delay
-            setTimeout(() => {
-              audioElement.play().catch(error => {
-                console.log('Autoplay still prevented:', error);
-              });
-            }, 1000);
-          });
-        });
-        
-        
-    </script>
 </body>
 </html>
