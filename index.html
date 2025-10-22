@@ -21,6 +21,16 @@
 <div id="kwizbot_widget"></div>
 <script defer>
 
+  window.__kw_site_event_queue = window.__kw_site_event_queue || [];
+  
+  window.kw_event_trigger = window.kw_event_trigger || function(event_name, event_data) {
+    if (window.__kw_event_trigger_real) {
+      window.__kw_event_trigger_real(event_name, event_data);
+    } else {
+      window.__kw_site_event_queue.push({ event_name, event_data });
+    }
+  };
+
 (function (k, w, i, z, b, o, t) {k['KwizbotWidget'] = b; k[b] = k[b] || function () { w.head.insertAdjacentHTML('beforeend', '<style type="text/css">.showAfterCssLoaded{display: none} .sc-powered-by{display:none} @media screen and (min-width: 451px) {.sc-chat-window{max-height: 550px;}} #kwizbot_widget .sc-launcher{bottom:54px; right:50px;} @media screen and (max-width: 900px){#kwizbot_widget .sc-launcher{bottom:92px; right:13px;}}</style>'); (k[b].q = k[b].q || []).push(arguments) }, k[b].l = 1 * new Date(); o = w.createElement(i), t = w.getElementsByTagName(i)[0]; o.async = 1; o.src = z; t.parentNode.insertBefore(o, t) })(window, document, 'script', 'https://widget-sv.kwizbot.io/kwjs_v2.js', 'kw');
 
 
