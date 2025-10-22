@@ -35,6 +35,10 @@ function get_user_locale() {
   return document.documentElement.lang || 'en';
 }
 
+window.__kw_event_queue = [];
+  window.kw_event_trigger = function(n, d) {
+    window.__kw_event_queue.push({ event_name: n, event_data: d || {} });
+  };
 
   kw_event_trigger('welcome_homepage', { locale: get_user_locale() });
 
