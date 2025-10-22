@@ -31,6 +31,20 @@ kw('init', {
     "engine_url": "https://engine-sv.kwizbot.io",
     "widget_custom_code": true,
 }) 
+
+
+function kw_event_trigger(event_name, event_data = {}) {
+  const event = new CustomEvent('kw_custom_event', {
+    detail: { event_name, event_data }
+  });
+  window.dispatchEvent(event);
+}
+
+function get_user_locale() {
+  return document.documentElement.lang || 'en';
+}
+
+kw_event_trigger('welcome_homepage', { locale: get_user_locale() });
 </script>    
 
 </body>
